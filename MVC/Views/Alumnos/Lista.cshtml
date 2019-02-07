@@ -1,0 +1,12 @@
+﻿@model List<MVC.Models.Alumno>
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<h2>Lista</h2>
+
+@foreach (var item in Model)
+{
+    <p>@item.Nombre</p>
+}
