@@ -16,11 +16,11 @@ namespace Ventas
         public Form1()
         {
             InitializeComponent();
+        }
 
-            var productosBL = new ProductosBL();
+        public void cargarDatos(ProductosBL productosBL, CategoriasBL categoriasBL)
+        {
             listadeProductosBindingSource.DataSource = productosBL.ListadeProductos;
-
-            var categoriasBL = new CategoriasBL();
             listadeCategoriasBindingSource.DataSource = categoriasBL.ListadeCategorias;
         }
     }

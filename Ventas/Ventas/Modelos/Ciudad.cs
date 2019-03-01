@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Ventas.Modelos
 {
-    public class Categoria
-    {        
+    public class Ciudad
+    {
         public int Id { get; set; }
         public string Descripcion { get; set; }
 
-        public Categoria()
+        public Ciudad()
         {
 
         }
 
-        public Categoria(int id, string descripcion)
+        public Ciudad(int id, string descripcion)
         {
             Id = id;
             Descripcion = descripcion;
