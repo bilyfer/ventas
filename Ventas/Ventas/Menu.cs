@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ventas.BL;
+using Ventas.Modelos;
 
 namespace Ventas
 {
@@ -17,6 +18,7 @@ namespace Ventas
         CategoriasBL _categoriasBL;
         ClientesBL _clientesBL;
         CiudadBL _ciudadBL;
+        FacturaBL _facturaBL;
 
         public Menu()
         {
@@ -26,6 +28,7 @@ namespace Ventas
             _categoriasBL = new CategoriasBL();
             _clientesBL = new ClientesBL();
             _ciudadBL = new CiudadBL();
+            _facturaBL = new FacturaBL();
         }
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -46,6 +49,16 @@ namespace Ventas
             formClientes.cargarDatos(_clientesBL, _ciudadBL);
 
             formClientes.Show();
+        }
+
+        private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formFactura = new Form3();
+            formFactura.MdiParent = this;
+
+            formFactura.cargarDatos(_facturaBL, _clientesBL, _productosBL);
+
+            formFactura.Show();
         }
     }
 }
